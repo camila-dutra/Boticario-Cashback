@@ -23,7 +23,7 @@ namespace Cashback.Data.Context
             modelBuilder.ApplyConfiguration(new PurchaseMap());
             modelBuilder.ApplyConfiguration(new UserStatusMap());
 
-
+            modelBuilder.ApplyPurchaseConfigurations();
             //modelBuilder.ApplyGlobalConfigurations();
             modelBuilder.SeedData();
 

@@ -22,6 +22,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Cashback.Data\Cashback.Data.csproj" />
+    <ProjectReference Include="..\Cashback.Service\Cashback.Service.csproj" />
+    <ProjectReference Include="..\Cashback.Swagger\Cashback.Swagger.csproj" />
   </ItemGroup>
 
 

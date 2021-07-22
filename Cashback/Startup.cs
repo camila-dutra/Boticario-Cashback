@@ -11,6 +11,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Cashback.Data.Context;
+using Cashback.Service.AutoMapper;
+using Cashback.Service.DependencyInjection;
+using Cashback.Swagger;
 using Microsoft.EntityFrameworkCore;
 
 namespace Cashback
@@ -33,6 +36,12 @@ namespace Cashback
             string dbConnectionString = Configuration.GetConnectionString("DefaultConnection");
 
             services.AddDbContext<CashbackContext>(opt => opt.UseMySql(dbConnectionString, ServerVersion.AutoDetect(dbConnectionString)).EnableSensitiveDataLogging());
+
+            NativeInjector.RegisterServices(services);
+
+            services.AddAutoMapper(typeof(AutoMapperSetup));
+
+            services.AddSwaggerConfiguration();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,6 +51,8 @@ namespace Cashback
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwaggerConfiguration();
 
             app.UseHttpsRedirection();
 

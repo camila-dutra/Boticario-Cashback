@@ -15,7 +15,7 @@ namespace Cashback.Data.Mappings
 
             builder.Property(x => x.Cpf);
 
-            builder.Property(x => x.Status); // 1- Approved    2- Under evaluation
+            builder.Property(x => x.Status); // 1- Approved    2- Under evaluation   3- Canceled
         }
     }
 }

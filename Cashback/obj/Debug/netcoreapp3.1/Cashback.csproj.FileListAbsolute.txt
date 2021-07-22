@@ -158,3 +158,12 @@ C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Cashb
 C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Cashback.Data.pdb
 C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Cashback.Domain.pdb
 C:\TesteCamila\BoticarioCashback\Cashback\Cashback\obj\Debug\netcoreapp3.1\Cashback.csproj.CopyComplete
+C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Cashback.Service.dll
+C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Cashback.Service.pdb
+C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Cashback.Swagger.dll
+C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Cashback.Swagger.pdb
+C:\TesteCamila\BoticarioCashback\Cashback\Cashback\obj\Debug\netcoreapp3.1\Cashback.MvcApplicationPartsAssemblyInfo.cs

@@ -5,11 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="AutoMapper\" />
-    <Folder Include="DependencyInjection\" />
-    <Folder Include="DTOs\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Services\" />
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cashback.Data\Cashback.Data.csproj" />
+    <ProjectReference Include="..\Cashback.Domain\Cashback.Domain.csproj" />
   </ItemGroup>
 
 </Project>
