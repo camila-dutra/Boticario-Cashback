@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Cashback.Domain.DTOs;
 
 namespace Cashback.Service.Interfaces
@@ -8,5 +9,6 @@ namespace Cashback.Service.Interfaces
     public interface IResellerService
     {
         bool PostReseller(ResellerRequestDTO reseller);
+        Task<CashbackResponseDTO> GetResellerCashback(long id);
     }
 }

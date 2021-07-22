@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cashback.Data.Migrations
 {
     [DbContext(typeof(CashbackContext))]
-    [Migration("20210721210010_Creating purchase table")]
-    partial class Creatingpurchasetable
+    [Migration("20210722212310_creating tables")]
+    partial class creatingtables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,9 +29,9 @@ namespace Cashback.Data.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("Cpf")
+                    b.Property<long>("Cpf")
                         .HasMaxLength(11)
-                        .HasColumnType("int");
+                        .HasColumnType("bigint");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime(6)");
@@ -40,7 +40,8 @@ namespace Cashback.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("Value")
-                        .HasColumnType("decimal(65,30)");
+                        .HasPrecision(9, 2)
+                        .HasColumnType("decimal(9,2)");
 
                     b.HasKey("Id");
 
@@ -53,9 +54,9 @@ namespace Cashback.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<int>("Cpf")
+                    b.Property<long>("Cpf")
                         .HasMaxLength(11)
-                        .HasColumnType("int");
+                        .HasColumnType("bigint");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -74,6 +75,41 @@ namespace Cashback.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("User");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            Cpf = 12312312323L,
+                            Email = "usertest@gmail.com",
+                            Name = "User Test",
+                            Password = "123123"
+                        });
+                });
+
+            modelBuilder.Entity("Cashback.Domain.Entities.UserStatus", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("Cpf")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserStatus");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            Cpf = 15350946056L,
+                            Status = 1
+                        });
                 });
 #pragma warning restore 612, 618
         }

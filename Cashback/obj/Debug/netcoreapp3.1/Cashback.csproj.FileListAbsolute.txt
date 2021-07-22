@@ -167,3 +167,5 @@ C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Swash
 C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Cashback.Swagger.dll
 C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Cashback.Swagger.pdb
 C:\TesteCamila\BoticarioCashback\Cashback\Cashback\obj\Debug\netcoreapp3.1\Cashback.MvcApplicationPartsAssemblyInfo.cs
+C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Http.dll
+C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\System.Net.Http.Json.dll

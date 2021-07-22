@@ -52,6 +52,19 @@ namespace Cashback.Data.Repository
             }
         }
 
+        public TEntity Find(Expression<Func<TEntity, bool>> where)
+        {
+            try
+            {
+                return DbSet.AsNoTracking().FirstOrDefault(where);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public int Save()
         {
             try

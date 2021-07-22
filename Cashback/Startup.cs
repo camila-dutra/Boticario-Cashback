@@ -41,6 +41,8 @@ namespace Cashback
 
             services.AddAutoMapper(typeof(AutoMapperSetup));
 
+            services.AddHttpClient();
+
             services.AddSwaggerConfiguration();
         }
 

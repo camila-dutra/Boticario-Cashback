@@ -28,5 +28,11 @@ namespace Cashback.Controllers
 
             return Ok(this.resellerService.PostReseller(reseller));
         }
+
+        [HttpGet("{cpf}/cashback")]
+        public IActionResult GetResellerCashback(long cpf)
+        {
+            return Ok(this.resellerService.GetResellerCashback(cpf));
+        }
     }
 }

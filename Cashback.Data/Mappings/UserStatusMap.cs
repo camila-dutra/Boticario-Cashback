@@ -11,7 +11,7 @@ namespace Cashback.Data.Mappings
     {
         public void Configure(EntityTypeBuilder<UserStatus> builder)
         {
-            builder.Property(x => x.Id).IsRequired();
+            builder.Property(x => x.Id).IsRequired().ValueGeneratedOnAdd(); ;
 
             builder.Property(x => x.Cpf);
 

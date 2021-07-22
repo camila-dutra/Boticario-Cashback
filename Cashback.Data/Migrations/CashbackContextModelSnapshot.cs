@@ -38,7 +38,8 @@ namespace Cashback.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("Value")
-                        .HasColumnType("decimal(65,30)");
+                        .HasPrecision(9, 2)
+                        .HasColumnType("decimal(9,2)");
 
                     b.HasKey("Id");
 
@@ -72,6 +73,16 @@ namespace Cashback.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("User");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            Cpf = 12312312323L,
+                            Email = "usertest@gmail.com",
+                            Name = "User Test",
+                            Password = "123123"
+                        });
                 });
 
             modelBuilder.Entity("Cashback.Domain.Entities.UserStatus", b =>

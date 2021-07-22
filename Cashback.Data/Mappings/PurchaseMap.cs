@@ -15,7 +15,7 @@ namespace Cashback.Data.Mappings
 
             builder.Property(x => x.Code).IsRequired();
 
-            builder.Property(x => x.Value).IsRequired();
+            builder.Property(x => x.Value).IsRequired().HasPrecision(9,2);
 
             builder.Property(x => x.Date).IsRequired();
 
