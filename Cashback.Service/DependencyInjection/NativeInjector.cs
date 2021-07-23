@@ -17,12 +17,15 @@ namespace Cashback.Service.DependencyInjection
 
             services.AddScoped<IResellerService, ResellerService>();
             services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IPurchaseService, PurchaseService>();
 
             #endregion
 
             #region Repositories
 
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IPurchaseRepository, PurchaseRepository>();
+            services.AddScoped<IUserStatusRepository, UserStatusRepository>();
 
             #endregion
 

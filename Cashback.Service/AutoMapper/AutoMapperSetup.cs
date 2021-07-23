@@ -12,6 +12,8 @@ namespace Cashback.Service.AutoMapper
         public AutoMapperSetup()
         {
             CreateMap<ResellerRequestDTO, User>().ReverseMap();
+            CreateMap<PurchaseDTO, Purchase>().ReverseMap();
+            CreateMap<CashbackPurchaseDTO, Purchase>().ReverseMap();
         }
     }
 }

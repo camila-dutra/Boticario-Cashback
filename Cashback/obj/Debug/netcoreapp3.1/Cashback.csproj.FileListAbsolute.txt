@@ -175,3 +175,4 @@ C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Newto
 C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Cashback.Auth.dll
 C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Cashback.Auth.pdb
+C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Annotations.dll

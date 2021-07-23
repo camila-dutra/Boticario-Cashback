@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace Cashback.Controllers
 {
     [Route("api/v1/[controller]")]
-    [ApiController, Authorize]
+    [ApiController]
     public class ResellerController : ControllerBase
     {
         private readonly IResellerService resellerService;
@@ -30,11 +30,11 @@ namespace Cashback.Controllers
         }
 
         [HttpGet("{cpf}/cashback")]
-        public async Task<IActionResult> GetResellerCashback(long cpf)
+        public IActionResult GetResellerCashback(long cpf)
         {
             try
             {
-                var result = await resellerService.GetResellerCashback(cpf);
+                var result = this.resellerService.GetResellerCashback(cpf);
                 return Ok(new { data = result });
             }
             catch (System.Exception ex)
