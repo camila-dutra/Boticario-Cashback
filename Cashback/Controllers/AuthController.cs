@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Cashback.Domain.DTOs;
 using Cashback.Service.Interfaces;
@@ -21,6 +22,8 @@ namespace Cashback.Controllers
         }
 
         [HttpPost("authenticate"), AllowAnonymous]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public IActionResult Authenticate(UserAuthenticateRequestDTO user)
         {
             return Ok(this.authService.Authenticate(user));

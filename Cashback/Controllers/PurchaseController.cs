@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Cashback.Auth.Services;
@@ -25,8 +26,8 @@ namespace Cashback.Controllers
         }
 
         [HttpGet]
-        [SwaggerResponse(200, Type = typeof(Purchase), Description = "Purchase list")]
-        [SwaggerResponse(204, Type = typeof(string), Description = "No purchase found!")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public IActionResult GetPurchases([FromQuery]long cpf)
         {
             //string cpfStr = TokenService.GetValueFromClaim(HttpContext.User.Identity, ClaimTypes.NameIdentifier);
@@ -35,8 +36,8 @@ namespace Cashback.Controllers
         }
 
         [HttpPost]
-        [SwaggerResponse(200, Type = typeof(Purchase), Description = "Registered purchase")]
-        [SwaggerResponse(204, Type = typeof(string), Description = "No purchase found!")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public IActionResult Post(PurchaseDTO purchase)
         {
             if (!ModelState.IsValid)

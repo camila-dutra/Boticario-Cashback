@@ -2,10 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Cashback.Domain.DTOs;
+using Cashback.Domain.Entities;
 using Cashback.Service.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace Cashback.Controllers
 {
@@ -21,6 +24,8 @@ namespace Cashback.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public IActionResult Post(ResellerRequestDTO reseller)
         {
             if (!ModelState.IsValid)
@@ -30,6 +35,8 @@ namespace Cashback.Controllers
         }
 
         [HttpGet("{cpf}/cashback")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public IActionResult GetResellerCashback(long cpf)
         {
             try
