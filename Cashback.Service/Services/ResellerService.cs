@@ -16,13 +16,16 @@ namespace Cashback.Service.Services
 {
     public class ResellerService : IResellerService
     {
-        private readonly IResellerRepository _resellerRepository;
+        private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
+        private readonly IAuthService _authService;
 
-        public ResellerService(IResellerRepository resellerRepository, 
+        public ResellerService(IUserRepository userRepository,
+            IAuthService authService,
             IMapper mapper)
         {
-            this._resellerRepository = resellerRepository;
+            this._userRepository = userRepository;
+            this._authService = authService;
             this._mapper = mapper;
         }
         
@@ -31,9 +34,9 @@ namespace Cashback.Service.Services
             Validator.ValidateObject(reseller, new ValidationContext(reseller), true);
 
             User _user = _mapper.Map<User>(reseller);
-            //_user.Password = EncryptPassword(_user.Password); // encrypting the password
+            _user.Password = _authService.EncryptPassword(_user.Password); // encrypting the password
 
-            this._resellerRepository.Create(_user);
+            this._userRepository.Create(_user);
 
             return true;
         }

@@ -8,9 +8,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Cashback.Data.Repository
 {
-    public class ResellerRepository : Repository<User>, IResellerRepository
+    public class UserRepository : Repository<User>, IUserRepository
     {
-        public ResellerRepository(CashbackContext context) : base(context) { }
+        public UserRepository(CashbackContext context) : base(context) { }
 
         public IEnumerable<User> GetAll()
         {

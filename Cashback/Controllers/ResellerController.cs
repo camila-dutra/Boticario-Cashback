@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace Cashback.Controllers
 {
     [Route("api/v1/[controller]")]
-    [ApiController]
+    [ApiController, Authorize]
     public class ResellerController : ControllerBase
     {
         private readonly IResellerService resellerService;

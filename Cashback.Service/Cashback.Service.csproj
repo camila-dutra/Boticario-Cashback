@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Cashback.Auth\Cashback.Auth.csproj" />
     <ProjectReference Include="..\Cashback.Data\Cashback.Data.csproj" />
     <ProjectReference Include="..\Cashback.Domain\Cashback.Domain.csproj" />
   </ItemGroup>

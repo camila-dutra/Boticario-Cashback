@@ -172,3 +172,6 @@ C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Syste
 C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Cashback.Auth.dll
+C:\TesteCamila\BoticarioCashback\Cashback\Cashback\bin\Debug\netcoreapp3.1\Cashback.Auth.pdb

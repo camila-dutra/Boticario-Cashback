@@ -5,7 +5,7 @@ using Cashback.Domain.Entities;
 
 namespace Cashback.Data.Interfaces
 {
-    public interface IResellerRepository : IRepository<User>
+    public interface IUserRepository : IRepository<User>
     {
     }
 }
