@@ -6,7 +6,7 @@ namespace Cashback.Domain.DTOs
 {
     public class CashbackResponseDTO
     {
-        public int statusCode { get; set; }
-        public CashbackResponseBodyDTO body { get; set; }
+        public int StatusCode { get; set; }
+        public CashbackResponseBodyDTO Body { get; set; }
     }
 }

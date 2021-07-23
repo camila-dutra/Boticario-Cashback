@@ -30,9 +30,17 @@ namespace Cashback.Controllers
         }
 
         [HttpGet("{cpf}/cashback")]
-        public IActionResult GetResellerCashback(long cpf)
+        public async Task<IActionResult> GetResellerCashback(long cpf)
         {
-            return Ok(this.resellerService.GetResellerCashback(cpf));
+            try
+            {
+                var result = await resellerService.GetResellerCashback(cpf);
+                return Ok(new { data = result });
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

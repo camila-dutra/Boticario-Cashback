@@ -9,6 +9,6 @@ namespace Cashback.Service.Interfaces
     public interface IResellerService
     {
         bool PostReseller(ResellerRequestDTO reseller);
-        Task<CashbackResponseDTO> GetResellerCashback(long id);
+        Task<object> GetResellerCashback(long cpf);
     }
 }

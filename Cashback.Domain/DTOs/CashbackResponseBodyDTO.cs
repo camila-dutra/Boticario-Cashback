@@ -6,6 +6,6 @@ namespace Cashback.Domain.DTOs
 {
     public class CashbackResponseBodyDTO
     {
-        public decimal credit { get; set; }
+        public decimal Credit { get; set; }
     }
 }
