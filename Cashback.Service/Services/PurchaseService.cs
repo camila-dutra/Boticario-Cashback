@@ -83,21 +83,10 @@ namespace Cashback.Service.Services
 
         public void CashbackCalculator(CashbackPurchaseDTO purchase)
         {
-            if (purchase.Value <= 1000)
-            {
-                purchase.CashbackPerc = "10%";
-                purchase.CashbackValue = purchase.Value * (decimal)0.10;
-            }
-            else if (purchase.Value <= 1500)
-            {
-                purchase.CashbackPerc = "15%";
-                purchase.CashbackValue = purchase.Value * (decimal)0.15;
-            }
-            else
-            {
-                purchase.CashbackPerc = "20%";
-                purchase.CashbackValue = purchase.Value * (decimal)0.20;
-            }
+            purchase.CashbackPerc = purchase.Value <= 1000 ? "10%" : purchase.Value <= 1500 ? "15%" : "20";
+
+            purchase.CashbackValue = purchase.Value * (purchase.Value <= 1000 ? (decimal)0.10
+                : purchase.Value <= 1500 ? (decimal)0.15 : (decimal)0.20);
         }
     }
 }
