@@ -21,12 +21,12 @@ namespace Cashback.Service.Services
         private readonly IAuthService _authService;
 
         public ResellerService(IUserRepository userRepository,
-            IAuthService authService,
-            IMapper mapper)
+            IMapper mapper,
+            IAuthService authService)
         {
             this._userRepository = userRepository;
-            this._authService = authService;
             this._mapper = mapper;
+            this._authService = authService;
         }
         
         public bool PostReseller(ResellerRequestDTO reseller)
@@ -43,9 +43,18 @@ namespace Cashback.Service.Services
 
         public async Task<object> GetResellerCashback(long cpf)
         {
+            if (cpf > 0)
+            {
+                if (cpf.ToString().Length != 11)
+                    throw new Exception("CPF is not valid");
+            }
+            else
+            {
+                cpf = 12312312323;
+            }
+            
             using (var client = new HttpClient())
             {
-                cpf = (cpf > 0) ? cpf : 12312312323;
                 string url = "https://mdaqk8ek5j.execute-api.us-east-1.amazonaws.com/v1/cashback?cpf=" + cpf;
                 client.DefaultRequestHeaders.Add("token", "ZXPURQOARHiMc6Y0flhRC1LVlZQVFRnm");
 

@@ -80,12 +80,12 @@ namespace Cashback.Service.Services
                 purchase.CashbackPerc = "10%";
                 purchase.CashbackValue = purchase.Value * (decimal)0.10;
             }
-            else if (purchase.Value > 1000 && purchase.Value <= 1500)
+            else if (purchase.Value <= 1500)
             {
                 purchase.CashbackPerc = "15%";
                 purchase.CashbackValue = purchase.Value * (decimal)0.15;
             }
-            else if (purchase.Value > 1500)
+            else
             {
                 purchase.CashbackPerc = "20%";
                 purchase.CashbackValue = purchase.Value * (decimal)0.20;

@@ -7,5 +7,6 @@ namespace Cashback.Data.Interfaces
 {
     public interface IUserRepository : IRepository<User>
     {
+        public IEnumerable<User> GetAll();
     }
 }
