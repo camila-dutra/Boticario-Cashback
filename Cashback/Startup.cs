@@ -13,6 +13,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Cashback.Auth.Models;
 using Cashback.Data.Context;
+using Cashback.Data.Repository;
+using Cashback.Logger;
 using Cashback.Service.AutoMapper;
 using Cashback.Service.DependencyInjection;
 using Cashback.Swagger;
@@ -74,8 +76,10 @@ namespace Cashback
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddContext(LogLevel.Information); loggerFactory.AddContext(LogLevel.Information);
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

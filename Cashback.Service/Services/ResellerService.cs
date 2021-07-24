@@ -34,7 +34,7 @@ namespace Cashback.Service.Services
             Validator.ValidateObject(reseller, new ValidationContext(reseller), true);
 
             User _user = _mapper.Map<User>(reseller);
-            _user.Password = _authService.EncryptPassword(_user.Password); // encrypting the password
+            _user.Password = _authService.EncryptPassword(_user.Password); // encrypting password
 
             this._userRepository.Create(_user);
 

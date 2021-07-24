@@ -29,7 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cashback.Auth", "Cashback.A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Tests", "0 - Tests", "{861DFA60-B04B-4E31-B068-29A67C6A3E70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cashback.Application.Tests", "Cashback.Application.Tests\Cashback.Application.Tests.csproj", "{50F417A9-ACCF-4BE4-9790-4529F819104D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cashback.Application.Tests", "Cashback.Application.Tests\Cashback.Application.Tests.csproj", "{50F417A9-ACCF-4BE4-9790-4529F819104D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

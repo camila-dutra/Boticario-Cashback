@@ -14,6 +14,8 @@ namespace Cashback.Data.Context
 
         #region DbSets
         public DbSet<User> User { get; set; }
+        public DbSet<Purchase> Purchase { get; set; }
+        public DbSet<LoggerApp> LoggerApp { get; set; }
 
         #endregion
 
@@ -22,9 +24,8 @@ namespace Cashback.Data.Context
             modelBuilder.ApplyConfiguration(new UserMap()); 
             modelBuilder.ApplyConfiguration(new PurchaseMap());
             modelBuilder.ApplyConfiguration(new UserStatusMap());
+            modelBuilder.ApplyConfiguration(new LoggerAppMap());
 
-            //modelBuilder.ApplyPurchaseConfigurations();
-            //modelBuilder.ApplyGlobalConfigurations();
             modelBuilder.SeedData();
 
             base.OnModelCreating(modelBuilder);

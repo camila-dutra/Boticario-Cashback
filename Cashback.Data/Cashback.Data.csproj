@@ -23,8 +23,4 @@
     <ProjectReference Include="..\Cashback.Domain\Cashback.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Migrations\" />
-  </ItemGroup>
-
 </Project>
