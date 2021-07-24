@@ -14,5 +14,6 @@ namespace Cashback.Domain.DTOs
         public int Status { get; set; }
         public string CashbackPerc { get; set; }
         public decimal CashbackValue { get; set; }
+        public string DscStatus { get; set; }
     }
 }

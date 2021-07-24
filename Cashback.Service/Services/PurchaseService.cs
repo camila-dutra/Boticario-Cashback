@@ -68,9 +68,17 @@ namespace Cashback.Service.Services
             foreach (var purchase in listCashback)
             {
                 this.CashbackCalculator(purchase);
+                this.GetStatusPurchase(purchase);
             }
 
             return listCashback;
+        }
+
+        public void GetStatusPurchase(CashbackPurchaseDTO purchase)
+        {
+            purchase.DscStatus = ( purchase.Status == (int)PurchaseStatus.Approved ? "Approved"
+                : (purchase.Status == (int)PurchaseStatus.UnderEvaluation ? "Under Evaluation" : "Canceled"));
+
         }
 
         public void CashbackCalculator(CashbackPurchaseDTO purchase)
