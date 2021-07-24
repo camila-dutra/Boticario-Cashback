@@ -33,8 +33,14 @@ namespace Cashback.Service.Services
         {
             Validator.ValidateObject(reseller, new ValidationContext(reseller), true);
 
+            User user = this._userRepository.Find(x => x.Cpf == reseller.Cpf);
+            if (user != null)
+                throw new Exception("User already exists");
+
             User _user = _mapper.Map<User>(reseller);
             _user.Password = _authService.EncryptPassword(_user.Password); // encrypting password
+
+            
 
             this._userRepository.Create(_user);
 
