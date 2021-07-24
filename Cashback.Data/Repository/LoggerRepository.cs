@@ -9,13 +9,19 @@ namespace Cashback.Data.Repository
 {
     public class LoggerRepository
     {
-        public LoggerRepository() { }
+
+        private DbContextOptions _options;
+
+        public LoggerRepository() 
+        {
+
+        }
 
         public bool Insert(LoggerApp log)
         {
             try
             {
-                var optionsBuilder = new DbContextOptionsBuilder<CashbackContext>();
+                var optionsBuilder = new DbContextOptionsBuilder<CashbackContext>().EnableSensitiveDataLogging();
                 using (var context = new CashbackContext(optionsBuilder.Options))
                 {
                     context.LoggerApp.Add(log);
@@ -24,10 +30,11 @@ namespace Cashback.Data.Repository
 
                 return true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 return false;
             }
         }
+
     }
 }

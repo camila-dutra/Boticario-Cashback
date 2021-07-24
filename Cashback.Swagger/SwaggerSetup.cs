@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,6 +27,30 @@ namespace Cashback.Swagger
                                                                            },
 
                                                                    });
+                                              opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                                                  {
+                                                      Description = "JWT Authorization header using the Bearer scheme (Example: 'Bearer 12345abcdef')",
+                                                      Name = "Authorization",
+                                                      In = ParameterLocation.Header,
+                                                      Type = SecuritySchemeType.ApiKey,
+                                                      Scheme = "Bearer"
+                                                  });
+
+                                              opt.AddSecurityRequirement(new OpenApiSecurityRequirement
+                                                                       {
+                                                                           {
+                                                                               new OpenApiSecurityScheme
+                                                                               {
+                                                                                   Reference = new OpenApiReference
+                                                                                       {
+                                                                                           Type = ReferenceType.SecurityScheme,
+                                                                                           Id = "Bearer"
+                                                                                       }
+                                                                               },
+                                                                               Array.Empty<string>()
+                                                                           }
+                                                                       });
+
 
                                               string xmlPath = Path.Combine("wwwroot", "api-Doc.xml");
                                               opt.IncludeXmlComments(xmlPath);

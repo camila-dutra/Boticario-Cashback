@@ -11,21 +11,19 @@ namespace Cashback.Data.Repository
 {
     public class UserRepository : Repository<User>, IUserRepository
     {
-        private readonly ILogger _logger;
-
-        public UserRepository(CashbackContext context,
-            ILogger<UserRepository> logger) : base(context)
+        private ILogger _logger;
+        public UserRepository(CashbackContext context, ILogger logger) : base(context)
         {
-            _logger = logger;
+            this._logger = logger;
         }
 
-        void Create(User user)
+        public void Create(User user)
         {
-            _logger.LogInformation(1002, "Creating a new user Name:" + user.Name + "- CPF:" + user.Cpf + "- Email:" + user.Email);
-            Create(user);
-            _logger.LogInformation(1002, "User Created:" + user.Name + "- CPF:" + user.Cpf + "- Email:" + user.Email);
+            //_logger.LogInformation(1002, "Creating a new user Name:" + user.Name + "- CPF:" + user.Cpf + "- Email:" + user.Email);
+           // _logger.LogInformation("Creating a new user Name");
+            _logger.LogInformation(1000,$"Processing request from {user}", user);
+            base.Create(user);
         }
-
         public IEnumerable<User> GetAll()
         {
             return Query(x => true).AsNoTracking();

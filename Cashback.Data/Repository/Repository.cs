@@ -6,6 +6,7 @@ using System.Text;
 using Cashback.Data.Context;
 using Cashback.Data.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace Cashback.Data.Repository
 {

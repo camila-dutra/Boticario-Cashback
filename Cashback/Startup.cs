@@ -14,11 +14,13 @@ using System.Threading.Tasks;
 using Cashback.Auth.Models;
 using Cashback.Data.Context;
 using Cashback.Data.Repository;
+using Cashback.Domain.Entities;
 using Cashback.Logger;
 using Cashback.Service.AutoMapper;
 using Cashback.Service.DependencyInjection;
 using Cashback.Swagger;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
@@ -36,15 +38,22 @@ namespace Cashback
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddControllersWithViews();
-            services.AddMvc(option => option.EnableEndpointRouting = false)
-                .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling =
-                                       Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
 
             //adding new connection to database
             string dbConnectionString = Configuration.GetConnectionString("DefaultConnection");
 
             services.AddDbContext<CashbackContext>(opt => opt.UseMySql(dbConnectionString, ServerVersion.AutoDetect(dbConnectionString)).EnableSensitiveDataLogging());
+
+            var serviceProvider = services.BuildServiceProvider();
+            var logger = serviceProvider.GetService<ILogger<LoggerRepository>>();
+            services.AddSingleton(typeof(ILogger), logger);
+
+            //services.AddControllersWithViews();
+            services.AddMvc(option => option.EnableEndpointRouting = false)
+                .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling =
+                                       Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
 
             NativeInjector.RegisterServices(services);
 
@@ -64,6 +73,7 @@ namespace Cashback
                                                        {
                                                            x.RequireHttpsMetadata = false;
                                                            x.SaveToken = true;
+                                                           x.Audience = "iqimplict";
                                                            x.TokenValidationParameters = new TokenValidationParameters
                                                                {
                                                                    ValidateIssuerSigningKey = true,
@@ -98,5 +108,6 @@ namespace Cashback
                 endpoints.MapControllers();
             });
         }
+
     }
 }

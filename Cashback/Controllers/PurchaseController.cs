@@ -9,13 +9,14 @@ using Cashback.Auth.Services;
 using Cashback.Domain.DTOs;
 using Cashback.Domain.Entities;
 using Cashback.Service.Interfaces;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace Cashback.Controllers
 {
     [Route("api/v1/[controller]")]
-    [ApiController]
+    [ApiController, Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class PurchaseController : ControllerBase
     {
         private readonly IPurchaseService purchaseService;

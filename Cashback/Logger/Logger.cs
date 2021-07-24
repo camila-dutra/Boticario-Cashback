@@ -5,8 +5,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using Cashback.Data.Context;
 using Cashback.Data.Repository;
 using Cashback.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace Cashback.Logger

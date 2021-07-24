@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 using Cashback.Domain.DTOs;
 using Cashback.Domain.Entities;
 using Cashback.Service.Interfaces;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace Cashback.Controllers
 {
     [Route("api/v1/[controller]")]
-    [ApiController]
+    [ApiController, Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ResellerController : ControllerBase
     {
         private readonly IResellerService resellerService;
@@ -23,7 +24,7 @@ namespace Cashback.Controllers
             this.resellerService = resellerService;
         }
 
-        [HttpPost]
+        [HttpPost, AllowAnonymous]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public IActionResult Post(ResellerRequestDTO reseller)
