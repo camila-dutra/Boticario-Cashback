@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 using AutoMapper;
 using Cashback.Data.Interfaces;
@@ -37,17 +38,13 @@ namespace Cashback.Application.Tests.Services
             
         }
 
-        #region ValidatingSendingID
-
         [Fact]
-        public async void GetResellerCashback_EmptyCPF()
+        public async void GetResellerCashback_InvalidCPF()
         {
             var exception = await Assert.ThrowsAsync<Exception>(() => resellerService.GetResellerCashback(123));
             Assert.Equal("CPF is not valid", exception.Message);
         }
-        #endregion
 
-        #region ValidatingCorrectObject
         [Fact]
         public void Post_SendingValidObject()
         {
@@ -58,7 +55,21 @@ namespace Cashback.Application.Tests.Services
                                                                                  Password = "111222"});
                 Assert.True(result);
         }
-        #endregion
+
+        [Fact]
+        public void Post_SendingDomainInvalidObject()
+        {
+            var exception =  Assert.Throws<ValidationException>(() => resellerService.PostReseller(new ResellerRequestDTO
+                                                                    {
+                                                                        Name = "Camila Martins",
+                                                                        Cpf = 12345612345,
+                                                                        Email = "cmartinsdutra@gmail.com",
+                                                                    }));
+
+            Assert.Equal("The Password field is required.", exception.Message);
+        }
+
+
 
 
     }
