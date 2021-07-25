@@ -21,7 +21,7 @@ Ainda no Visual Studio 2019, no Packege Manager Console, selecionar no Default P
 Para realizar a autenticação e poder acessar os endpoints pelo Swagger:
 * Cadastrar novo usuário (POST api/v1/Reseller)
 * Fazer o login e obter o token JWT (POST api/v1/Auth/authenticate)
-* No botão "Authorize" no Swagger inserir o token adicionando a flag Bearer (Bearer <token>)
+* No botão "Authorize" no Swagger inserir o token adicionando a flag Bearer (Bearer -token-)
 
 
 ## Foram realizados:
