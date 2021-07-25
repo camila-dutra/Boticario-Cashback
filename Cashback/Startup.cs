@@ -107,6 +107,13 @@ namespace Cashback
             {
                 endpoints.MapControllers();
             });
+
+
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetRequiredService<CashbackContext>();
+                context.Database.Migrate();
+            }
         }
 
     }

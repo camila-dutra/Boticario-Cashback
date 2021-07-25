@@ -7,10 +7,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Cashback.Data.Repository
 {
-    public class LoggerRepository
+    public class LoggerRepository 
     {
-
-        private DbContextOptions _options;
 
         public LoggerRepository() 
         {
@@ -21,7 +19,7 @@ namespace Cashback.Data.Repository
         {
             try
             {
-                var optionsBuilder = new DbContextOptionsBuilder<CashbackContext>().EnableSensitiveDataLogging();
+                var optionsBuilder = new DbContextOptionsBuilder<CashbackContext>();
                 using (var context = new CashbackContext(optionsBuilder.Options))
                 {
                     context.LoggerApp.Add(log);

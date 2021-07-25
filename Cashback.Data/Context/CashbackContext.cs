@@ -38,8 +38,7 @@ namespace Cashback.Data.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             string dbConnectionString = "server=localhost;database=project;uid=root;password=Teste1234**";
-            optionsBuilder.UseMySql(dbConnectionString, ServerVersion.AutoDetect(dbConnectionString))
-                .EnableSensitiveDataLogging();
+            optionsBuilder.UseMySql(dbConnectionString, ServerVersion.AutoDetect(dbConnectionString));
         }
 
     }

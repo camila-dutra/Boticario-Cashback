@@ -17,8 +17,8 @@ namespace Cashback.Data.Extensions
                                                      Name = "User Test",
                                                      Cpf = 12312312323,
                                                      Email = "usertest@gmail.com",
-                                                     Password = "123123"
-                                                 });
+                                                     Password = "601F1889667EFAEBB33B8C12572835DA3F027F78"
+            });
 
             builder.Entity<UserStatus>().HasData(new UserStatus
             {

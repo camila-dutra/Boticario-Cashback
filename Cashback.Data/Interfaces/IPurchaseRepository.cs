@@ -7,6 +7,7 @@ namespace Cashback.Data.Interfaces
 {
     public interface IPurchaseRepository : IRepository<Purchase>
     {
+         void Create(Purchase purchase);
          IEnumerable<Purchase> GetAll(long cpf);
     }
 }

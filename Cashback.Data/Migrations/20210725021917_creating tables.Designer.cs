@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cashback.Data.Migrations
 {
     [DbContext(typeof(CashbackContext))]
-    [Migration("20210722212310_creating tables")]
+    [Migration("20210725021917_creating tables")]
     partial class creatingtables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -18,6 +18,29 @@ namespace Cashback.Data.Migrations
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
                 .HasAnnotation("ProductVersion", "5.0.8");
+
+            modelBuilder.Entity("Cashback.Domain.Entities.LoggerApp", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("CreatedTime")
+                        .IsRequired()
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("LogLevel")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LoggerApp");
+                });
 
             modelBuilder.Entity("Cashback.Domain.Entities.Purchase", b =>
                 {
@@ -83,7 +106,7 @@ namespace Cashback.Data.Migrations
                             Cpf = 12312312323L,
                             Email = "usertest@gmail.com",
                             Name = "User Test",
-                            Password = "123123"
+                            Password = "601F1889667EFAEBB33B8C12572835DA3F027F78"
                         });
                 });
 

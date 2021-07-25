@@ -12,6 +12,24 @@ namespace Cashback.Data.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "LoggerApp",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    LogLevel = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Message = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    CreatedTime = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LoggerApp", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "Purchase",
                 columns: table => new
                 {
@@ -68,7 +86,7 @@ namespace Cashback.Data.Migrations
             migrationBuilder.InsertData(
                 table: "User",
                 columns: new[] { "Id", "Cpf", "Email", "Name", "Password" },
-                values: new object[] { 1L, 12312312323L, "usertest@gmail.com", "User Test", "123123" });
+                values: new object[] { 1L, 12312312323L, "usertest@gmail.com", "User Test", "601F1889667EFAEBB33B8C12572835DA3F027F78" });
 
             migrationBuilder.InsertData(
                 table: "UserStatus",
@@ -78,6 +96,9 @@ namespace Cashback.Data.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "LoggerApp");
+
             migrationBuilder.DropTable(
                 name: "Purchase");
 
