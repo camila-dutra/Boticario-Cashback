@@ -43,7 +43,7 @@ namespace Cashback
             //adding new connection to database
             string dbConnectionString = Configuration.GetConnectionString("DefaultConnection");
 
-            services.AddDbContext<CashbackContext>(opt => opt.UseMySql(dbConnectionString, ServerVersion.AutoDetect(dbConnectionString)).EnableSensitiveDataLogging());
+            services.AddDbContext<CashbackContext>(opt => opt.UseMySql(dbConnectionString, ServerVersion.AutoDetect(dbConnectionString)));
 
             var serviceProvider = services.BuildServiceProvider();
             var logger = serviceProvider.GetService<ILogger<LoggerRepository>>();

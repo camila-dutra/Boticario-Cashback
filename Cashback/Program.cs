@@ -15,6 +15,7 @@ namespace Cashback
     {
         public static void Main(string[] args)
         {
+
             //CreateHostBuilder(args).Build().Run();
             var config = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
