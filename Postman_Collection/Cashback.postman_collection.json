@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "fb03e5c5-5c11-40b9-a5ad-c891024ec0ca",
+		"name": "Cashback",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST REGISTER RESELLER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Jose da Silva\",\r\n  \"cpf\": 12345612345,\r\n  \"email\": \"jose@gmail.com\",\r\n  \"password\": \"123123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44355/api/v1/reseller",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44355",
+					"path": [
+						"api",
+						"v1",
+						"reseller"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST RESELLER LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"jose@gmail.com\",\r\n  \"password\": \"123123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44355/api/v1/Auth/authenticate",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44355",
+					"path": [
+						"api",
+						"v1",
+						"Auth",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST PURCHASE",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Ikpvc2UgZGEgU2lsdmEiLCJlbWFpbCI6Impvc2VAZ21haWwuY29tIiwibmFtZWlkIjoiMTIzNDU2MTIzNDUiLCJuYmYiOjE2MjcyNDgzMTMsImV4cCI6MTYyNzI1OTExMywiaWF0IjoxNjI3MjQ4MzEzfQ.vPkztpv0iNhcjgjG5VGCDjlQgNWN1ncFCVoF38OW3jU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"code\": \"XFGTCJ\",\r\n  \"value\": 800,\r\n  \"date\": \"2021-07-25T21:19:29.256Z\",\r\n  \"cpf\": 12345612345\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44355/api/v1/purchase",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44355",
+					"path": [
+						"api",
+						"v1",
+						"purchase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET USER PURCHASE",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Ikpvc2UgZGEgU2lsdmEiLCJlbWFpbCI6Impvc2VAZ21haWwuY29tIiwibmFtZWlkIjoiMTIzNDU2MTIzNDUiLCJuYmYiOjE2MjcyNDgzMTMsImV4cCI6MTYyNzI1OTExMywiaWF0IjoxNjI3MjQ4MzEzfQ.vPkztpv0iNhcjgjG5VGCDjlQgNWN1ncFCVoF38OW3jU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44355/api/v1/Purchase?cpf=12345612345",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44355",
+					"path": [
+						"api",
+						"v1",
+						"Purchase"
+					],
+					"query": [
+						{
+							"key": "cpf",
+							"value": "12345612345"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET RESELLER CASHBACK",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Ikpvc2UgZGEgU2lsdmEiLCJlbWFpbCI6Impvc2VAZ21haWwuY29tIiwibmFtZWlkIjoiMTIzNDU2MTIzNDUiLCJuYmYiOjE2MjcyNDgzMTMsImV4cCI6MTYyNzI1OTExMywiaWF0IjoxNjI3MjQ4MzEzfQ.vPkztpv0iNhcjgjG5VGCDjlQgNWN1ncFCVoF38OW3jU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44355/api/v1/Reseller/12345612345/cashback",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44355",
+					"path": [
+						"api",
+						"v1",
+						"Reseller",
+						"12345612345",
+						"cashback"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

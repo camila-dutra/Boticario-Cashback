@@ -44,6 +44,7 @@ namespace Cashback.Controllers
             {
                 var result = await this.resellerService.GetResellerCashback(cpf);
                 return Ok(new { data = result });
+
             }
             catch (System.Exception ex)
             {
