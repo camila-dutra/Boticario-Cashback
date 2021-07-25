@@ -61,8 +61,15 @@ namespace Cashback.Logger
                                LogLevel = logLevel.ToString(),
                                CreatedTime = DateTime.UtcNow
                            };
-
-            _loggerRepository.Insert(eventLog);
+            try
+            {
+                _loggerRepository.Insert(eventLog);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
 
         public bool IsEnabled(LogLevel logLevel)

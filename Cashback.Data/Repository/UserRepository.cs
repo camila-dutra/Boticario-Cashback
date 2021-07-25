@@ -19,12 +19,13 @@ namespace Cashback.Data.Repository
 
         public void Create(User user)
         {
-            _logger.LogInformation(1000,$"Creating a new user {user}", user);
+            _logger.LogInformation($"Creating a new user NAME:" + user.Name + " CPF:" + user.Cpf + " EMAIL:" + user.Email);
             base.Create(user);
+            _logger.LogInformation($"User created!");
         }
         public IEnumerable<User> GetAll()
         {
-            _logger.LogInformation(1000, $"Getting all users");
+            _logger.LogInformation( $"Getting all users");
             return Query(x => true).AsNoTracking();
         }
     }

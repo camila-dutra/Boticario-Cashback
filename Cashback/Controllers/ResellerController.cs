@@ -38,11 +38,11 @@ namespace Cashback.Controllers
         [HttpGet("{cpf}/cashback")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public IActionResult GetResellerCashback(long cpf)
+        public async Task<IActionResult> GetResellerCashback(long cpf)
         {
             try
             {
-                var result = this.resellerService.GetResellerCashback(cpf);
+                var result = await this.resellerService.GetResellerCashback(cpf);
                 return Ok(new { data = result });
             }
             catch (System.Exception ex)

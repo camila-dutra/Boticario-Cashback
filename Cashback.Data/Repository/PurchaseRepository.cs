@@ -18,13 +18,14 @@ namespace Cashback.Data.Repository
 
         public void Create(Purchase purchase)
         {
-            _logger.LogInformation(1000, $"Creating a new purchase {purchase}", purchase);
+            _logger.LogInformation( $"Creating a new purchase CODE:" + purchase.Code + " VALUE:" + purchase.Value +" CPF:" + purchase.Cpf);
             base.Create(purchase);
+            _logger.LogInformation( $"Purchase created!");
         }
 
         public IEnumerable<Purchase> GetAll(long cpf)
         {
-            _logger.LogInformation(1000, $"Getting all purchases");
+            _logger.LogInformation($"Getting all purchases");
             return Query(x => x.Cpf == cpf).AsNoTracking();
         }
     }
