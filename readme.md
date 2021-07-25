@@ -24,6 +24,9 @@ Para realizar a autenticação e poder acessar os endpoints pelo Swagger:
 * No botão "Authorize" no Swagger inserir o token adicionando a flag Bearer (Bearer -token-)
 
 
+Para auxiliar nos testes foi criada uma collection na pasta Postman_Collection.
+
+
 ## Foram realizados:
 * Testes automatizados de unidade e integração utilizando XUnit e Moq
 * Autenticação por JWT
