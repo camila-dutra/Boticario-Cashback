@@ -13,7 +13,7 @@ Executar o script presente dentro na pasta DB para criar a database que será ut
 Ao abrir a solution no Visual Studio 2019, no arquivo appsettings.json, inserir a ConnectionString que será utilizada para a conexão.
 
 
-Ainda no Visual Studio 2019, no Packege Manager Console, selecionar no Default Project o projeto 4- Infra\ 4.1- Data\Cashback.Data e rodar os comandos:
+Ainda no Visual Studio 2019, no Package Manager Console, selecionar no Default Project o projeto 4- Infra\ 4.1- Data\Cashback.Data e rodar os comandos:
 * add-migration "adding migrations " 
 * update-database 
 
